@@ -4,6 +4,9 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recha
 import Select from 'react-select';
 import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
+import { useNavigate } from "react-router-dom";
+
+
 
 const geoUrl = '/mumbai-wards-2012.geojson';
 
@@ -341,6 +344,7 @@ export default function App() {
   const [clickedWard, setClickedWard] = useState(null);
   const [view, setView] = useState('map'); // map,h stats, chart
   const [clickedWardData, setClickedWardData] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
   if (clickedWardData) {
@@ -410,6 +414,10 @@ export default function App() {
 
   return (
     <>
+    {/* <Routes>
+      <Route path="/" element={<App />} /> 
+      <Route path="/candidate-page/:wardId" element={<WardResultScreen />} />
+    </Routes> */}
     <div className="navbar">
       <div className="navbar-left">
         <img 
@@ -522,7 +530,12 @@ export default function App() {
         </div>
         
   {/* Candidate Card */}
-  <div className="card candidate-card">
+  <div 
+  className="card candidate-card" 
+  onClick={() => navigate(`/candidate-page/${clickedWard}`)}  // 👈 navigate to details page
+  style={{ cursor: "pointer" }} // 👈 optional, makes it clickable
+>
+
   <div className="corner-circle">SC</div>
   {clickedWardData ? (
     <>
