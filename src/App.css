@@ -4,11 +4,35 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
 }
 
 body {
   background: #f7f8fa;
   color: #333;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between; /* logo left and right */
+  align-items: center;
+  background-color: #ffffff;
+  padding: 2px 8px;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navbar-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar-left,
+.navbar-right {
+  display: flex;
+  align-items: center;
 }
 
 /* ===== PAGE LAYOUT ===== */
@@ -16,7 +40,7 @@ body {
   display: grid;
   grid-template-columns: 1.2fr 1fr 1fr; /* Left - Middle - Right */
   gap: 20px;
-  padding: 20px;
+  padding: 15px;
   height: 100vh;
 }
 
@@ -26,25 +50,25 @@ body {
   border-radius: 10px;
   padding: 16px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 
 /* ===== LEFT SECTION ===== */
 .left-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
 }
 
 .map-placeholder {
   background: #eef3f7;
   border: 2px dashed #c5d1db;
-  height: 100%;
+  height: 95%;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   color: #777;
   font-size: 1rem;
   border-radius: 8px;
@@ -53,17 +77,20 @@ body {
 /* ===== MIDDLE SECTION ===== */
 .card {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 4px;
   box-shadow: 0 1px 6px rgba(0,0,0,0.1);
-  padding: 16px;
-  margin-bottom: 20px;
+  padding: 12px;
+  margin-bottom: 10px;
 }
 
 .card h3 {
   margin-bottom: 10px;
   color: #1976d2;
 }
-
+/* .population-title{
+  display: flex;
+  justify-content: space-between;
+}
 .population-total h2 {
   color: #1976d2;
   font-size: 28px;
@@ -72,71 +99,303 @@ body {
 .population-total p {
   font-size: 13px;
   color: #555;
+} */
+ .population-title {
+  display: flex;
+  justify-content: space-between; /* Population left, value right */
+  align-items: flex-start;
+  margin-bottom: 10px;
 }
 
-.population-table div {
+.population-title h3 {
+  font-size: 20px;
+  color: #1976d2;
+  margin: 0;
+  padding-top: 5px;
+}
+
+.population-info {
+  text-align: right; /* aligns both value and Total People to the right */
+}
+
+.population-info h2 {
+  font-size: 22px;
+  color: #333;
+  margin: 0;
+  padding-right: 10px;
+}
+
+.population-total {
+  font-size: 13px;
+  color: #777;
+  margin-top: 2px;
+  padding-right: 10px;
+}
+
+.population-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  gap: 12px 20px; /* space between rows and columns */
+  margin-top: 15px;
+}
+
+.religion-column div {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+
+.religion-column div:last-child {
+  border-bottom: none;
+}
+
+/* .population-table div {
   display: flex;
   justify-content: space-between;
   font-size: 14px;
   padding: 4px 0;
   border-bottom: 1px solid #eee;
-}
+} */
 
-.candidate-card .status {
+/* .candidate-card .status {
   display: inline-block;
   padding: 4px 10px;
   border-radius: 10px;
   margin: 8px 0;
   font-weight: bold;
   font-size: 12px;
+} */
+
+/* ===== CANDIDATE CARD ===== */
+.candidate-card {
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 5px;
+  margin-top: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: visible !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.corner-circle {
+  position: absolute;
+  top: -7px;     /* move upward so it sits ON the border */
+  right: -7px;   /* move right so half overlaps the border */
+  width: 30px;
+  height: 30px;
+  background-color: #d27c19; /* fallback color */
+  border-radius: 50%;
+  border: 1px solid #fff; /* makes it look like it’s floating */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.candidate-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Header: Name + WIN status */
+/* .candidate-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.candidate-header h3 {
+  font-size: 15px;
+  color: #000000;
+  margin: 0;
+} */
+
+/* WIN/LOSS badge */
+ .status {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.status.win {
+  background-color: #4caf50;
 }
 
 .status.loss {
-  background: #fde7e7;
-  color: #3ad32f;
+  background-color: #f44336;
 }
 
-.candidate-stats {
+/* Info section */
+.candidate-header1left {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.candidate-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.candidate-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} 
+
+/* .candidate-name {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+} */
+
+.candidate-info {
+  margin-top: 2px;
+  font-size: 8px;
+  color: #555;
   display: flex;
   justify-content: space-between;
-  text-align: center;
-  margin: 15px 0;
+  gap: 10px;
 }
 
-.candidate-stats h4 {
-  margin-bottom: 3px;
+.candidate-info p {
+  margin: 2px 0;
 }
 
-.social-score {
-  background: #4caf50;
-  color: white;
-  border-radius: 8px;
-  padding: 6px 0;
-  flex: 1;
+/* Stats box */
+.candidate-stats {
+  padding: 2px 8px;
+  margin-top: 14px;
+  border-radius: 10px;
 }
 
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-row p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+.stats-row p:not(:last-child) {
+  border-right: 1px solid #ccc;
+}
+
+.candidate-stats p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #333;
+  margin: 6px 0;
+}
+
+.candidate-stats strong {
+  color: #555;
+}
+.candidate-name {
+  margin: 0;
+  font-size: 12px; /* smaller than 18px */
+  font-weight: 600;
+  color: #222 !important; /* overrides blue color */
+  text-decoration: none; /* removes link-like underline/blue tint */
+}
+.candidate-divider {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 5px 0;
+}
 .candidate-footer {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end; /* keeps bottom alignment consistent */
+  gap: 12px;
+  font-size: 14px;
+  color: #333;
+  margin-top: 10px;
+  padding: 4px 0;
+}
+
+.footer-item {
+  display: flex;
   align-items: center;
 }
 
-.place {
-  background: #f0f0f0;
-  padding: 5px 10px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 13px;
+.footer-item.margin {
+  display: flex;
+  flex-direction: column; /* makes count appear above label */
+  align-items: center;
+  line-height: 1.4;
 }
 
-.party {
+.footer-item.margin b {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.footer-item.margin span {
+  font-size: 12px;
+  color: #555;
+}
+.footer-item.place {
+  background-color: #1976d2; /* or any color you want */
+  color: white;
+  padding: 5px 14px;
+  border-radius: 20px; /* makes it rounded */
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+  text-align: center;
+}
+
+/* .party {
   display: flex;
   align-items: center;
   gap: 6px;
-}
+} */
 
 .party img {
-  height: 20px;
+  height: 30px;
+}
+.party-list div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 14px;
+  /* line-height: 1.2; */
+}
+
+.party-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.party-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
 }
 
 /* ===== RIGHT SECTION ===== */
@@ -165,15 +424,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 0;
+  /* padding: 15px 0; */
   border-bottom: 1px solid #f2f2f2;
   font-size: 14px;
-}
-
+} 
 .color {
   display: inline-block;
-  width: 8px;
-  height: 14px;
+  width: 6px;
+  height: 22px;
   border-radius: 2px;
   margin-right: 6px;
 }
@@ -197,4 +455,128 @@ body {
 }
 path:focus {
   outline: none;
+} 
+/* ===== CANDIDATE CARD CLEAN VERSION ===== */
+.candidate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 12px 0;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.candidate-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.corner-circle {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #d27c19;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Candidate Header (photo + name) */
+
+.candidate-logo {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: contain;
+  border: 2px solid #eee;
+  background: #fff;
+  padding: 4px;
+}
+
+.candidate-details {
+  text-align: center;
+}
+
+.candidate-name {
+  /* font-size: 1rem; */
+  font-weight: 600;
+  color: #222;
+  margin-top: 4px;
+}
+
+.status {
+  margin-top: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.status.win {
+  background: #4caf50;
+}
+.status.loss {
+  background: #f44336;
+}
+
+/* Divider */
+.candidate-divider {
+  width: 80%;
+  border-top: 1px solid #e0e0e0;
+  margin: 12px 0;
+}
+
+/* Stats Section */
+.candidate-stats {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.stats-row {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Footer (votes, place, etc.) */
+.candidate-footer {
+  margin-top: 10px;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.footer-item.margin b {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.footer-item.place {
+  background: #1976d2;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
 }

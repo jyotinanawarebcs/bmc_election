@@ -374,16 +374,69 @@ export default function App() {
     party, seats, color: partyColors[party]
   }));
 
+  const PartySeatCounter = () => {
+  const [seatCount, setSeatCount] = useState({});
+
+  useEffect(() => {
+    const partyWins = {};
+
+    // Loop through all wards
+    Object.values(full2012Data).forEach((ward) => {
+      const party = ward.party;
+      if (!partyWins[party]) {
+        partyWins[party] = 1;
+      } else {
+        partyWins[party] += 1;
+      }
+    });
+
+    setSeatCount(partyWins);
+    console.log("✅ Total seats per party:", partyWins);
+  }, []);
+
   return (
+    <div>
+      <h2>Party-wise Seat Count</h2>
+      <ul>
+        {Object.entries(seatCount).map(([party, count]) => (
+          <li key={party}>
+            <strong>{party}</strong>: {count} seats
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+  return (
+    <>
+    <div className="navbar">
+      <div className="navbar-left">
+        <img 
+          src="https://brightcrestsolutions.com/img/BrightCrestSolutions_Logo.png" 
+          alt="Company Logo" 
+          className="navbar-logo"
+        />
+      </div>
+
+      <div className="navbar-right">
+        <img 
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0XHvkbU5x5hVLCkvGmaMo_yDLW_LhxtvthtZ-94xanWD-rbdPvNKZk5SiUQkdxa00Q&usqp=CAU" 
+          alt="BMC Logo" 
+          className="navbar-logo"
+        />
+      </div>
+    </div>
+
     <div className="page-container">
       {/* LEFT SECTION - MAP */}
       <div className="section left-section">
-        <h2>Map View</h2>
+        {/* <h2>Map View</h2> */}
         <div className="map-placeholder">
           <ComposableMap
               projection="geoMercator"
               projectionConfig={{
-                scale: 120000, // increase or decrease depending on your map size
+                scale: 150000, // increase or decrease depending on your map size
                 center: [72.85, 19.07] // example: Mumbai, adjust for your city/region
               }}
               width={1000}
@@ -439,64 +492,110 @@ export default function App() {
       {/* MIDDLE SECTION - Population + Candidate Info */}
       <div className="section middle-section">
         {/* Population Card */}
-        <div className="card population-card">
-          <h3>Population</h3>
-            {clickedWardData ? (
-              <>
-          <h2>{clickedWardData.POPULATION}</h2>
-          </>
-        ) : (
-          <p>Select a ward to view details</p>
-        )}
-          <div className="population-total">
-            <p>Total People</p>
+        <div className="card population-header">
+          <div className="population-title">
+            <h3>Population:</h3>
+            <div className="population-info">
+              {clickedWardData ? (
+                <h2>{clickedWardData.POPULATION}</h2>
+              ) : (
+                <p>Select a ward to view details</p>
+              )}
+              <div className="population-total">Total People</div>
+            </div>
           </div>
+
           <div className="population-table">
+          <div className="religion-column">
             <div><span>Hindu</span><span>60.73%</span></div>
             <div><span>Muslim</span><span>25.06%</span></div>
             <div><span>Christian</span><span>2.74%</span></div>
             <div><span>Sikh</span><span>0.44%</span></div>
+          </div>
+          <div className="religion-column">
             <div><span>Buddhist</span><span>4.35%</span></div>
             <div><span>Jain</span><span>5.38%</span></div>
             <div><span>Other Religion</span><span>6.38%</span></div>
           </div>
         </div>
+
+        </div>
         
-        {/* Candidate Card */}
-        <div className="card candidate-card">
-          {clickedWardData ? (
-          <>
-            <p><strong>Name:</strong> {clickedWardData.Corporator}</p>
-            <p>Caste: {clickedWardData.Caste} <br></br>Ward No: {clickedWardData.PRABHAG_NO}</p>
-            <div className="status loss">WIN</div>
-          </>
-        ) : (
-          <p>Select a ward to view details</p>
-        )}
+  {/* Candidate Card */}
+  <div className="card candidate-card">
+  <div className="corner-circle">SC</div>
+  {clickedWardData ? (
+    <>
+      <div className="candidate-header1left">
+        <img
+          src={
+            {
+              BJP: "https://upload.wikimedia.org/wikipedia/commons/e/e8/BJP_election_symbol.png",
+              Congress: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Hand_INC.svg/800px-Hand_INC.svg.png",
+              "Shiv Sena": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Indian_Election_Symbol_Bow_And_Arrow.svg/1280px-Indian_Election_Symbol_Bow_And_Arrow.svg.png",
+              NCP: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Nationalist_Congress_Party_symbol.svg",
+              SP: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Indian_Election_Symbol_Cycle.png",
+              MNS: "https://upload.wikimedia.org/wikipedia/en/9/9b/Maharashtra_Navnirman_Sena_logo.png",
+            }[full2012Data[clickedWard]?.party] ||
+            "https://upload.wikimedia.org/wikipedia/commons/3/3f/No_image_available_2.png" // default fallback
+          }
+          alt={`${full2012Data[clickedWard]?.party} Symbol`}
+          className="candidate-logo"
+        />
 
-          <div className="candidate-stats">
-            {/* <h3>🏠 Ward {clickedWard}</h3> */}
-            <p><strong>Winner: </strong> 
-              <span style={{ color: partyColors[full2012Data[clickedWard]?.party] }}>
-                {full2012Data[clickedWard]?.party}
-              </span>
+        <div className="candidate-details">
+          <h3 className="candidate-name">{clickedWardData.Corporator}</h3>
+          <div className="candidate-info">
+            <p>
+              <strong>Caste:</strong> {clickedWardData.Caste}
             </p>
-            <p><strong>Votes:</strong> {full2012Data[clickedWard]?.votes.toLocaleString()}</p>
-          </div>
-
-          <div className="candidate-footer">
-            {/* <div className="place">1st Place</div>
-            <div className="party">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/en/9/9e/BJP_election_symbol.png"
-                alt="BJP"
-              />
-              <span>BJP</span>
-            </div>
-            <div className="margin">Margin of Won <b>19,556</b></div> */}
+            <p>
+              <strong>Ward No:</strong> {clickedWardData.PRABHAG_NO}
+            </p>
           </div>
         </div>
       </div>
+
+      <hr className="candidate-divider" />
+
+      <div className="candidate-stats">
+        <div className="stats-row">
+          <p>
+            <strong>Winner:</strong>{" "}
+            <span
+              style={{
+                color: partyColors[full2012Data[clickedWard]?.party],
+                fontWeight: "bold",
+              }}
+            >
+              {full2012Data[clickedWard]?.party}
+            </span>
+          </p>
+
+          <p>
+            <strong>Votes:</strong>{" "}
+            {full2012Data[clickedWard]?.votes.toLocaleString()}
+          </p>
+          <p>Social Score</p>
+        </div>
+      </div>
+    </>
+  ) : (
+    <p>Select a ward to view details</p>
+  )}
+          <hr className="candidate-divider" />
+          <div className="candidate-footer">
+            <div className="footer-item place">1st Place </div>
+            <div className="footer-item party">BJP </div>
+            <div className="footer-item margin">
+              <b>19,556</b>
+              <span>Margin of Won</span>
+            </div>
+          </div>
+
+      </div>
+
+</div>
 
       {/* RIGHT SECTION - Mumbai Seats */}
       <div className="section right-section">
@@ -508,16 +607,66 @@ export default function App() {
           </div>
 
           <div className="party-list">
-            <div><span className="color orange"></span>Shiv Sena <span>39</span></div>
-            <div><span className="color saffron"></span>BJP <span>57</span></div>
-            <div><span className="color blue"></span>Congress <span>13</span></div>
-            <div><span className="color green"></span>NCP <span>2</span></div>
-            <div><span className="color red"></span>MNS <span>0</span></div>
-            <div><span className="color gray"></span>NOTA <span>0</span></div>
-            <div><span className="color black"></span>Others <span>0</span></div>
+            <div>
+              <div className="party-left">
+                <span className="color orange"></span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Indian_Election_Symbol_Bow_And_Arrow.svg/1280px-Indian_Election_Symbol_Bow_And_Arrow.svg.png" alt="Shiv Sena" className="party-logo" />
+                <span>Shiv Sena</span>
+              </div>
+              <span>39</span>
+            </div>
+            <div>
+              <div className="party-left">
+                <span className="color saffron"></span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/BJP_election_symbol.png" alt="BJP" className="party-logo" />
+                <span>BJP</span>
+              </div>
+              <span>57</span>
+            </div>
+            <div>
+              <div className="party-left">
+                <span className="color blue"></span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Hand_INC.svg/800px-Hand_INC.svg.png" alt="Congress" className="party-logo" />
+                <span>Congress</span>
+              </div>
+              <span>13</span>
+            </div>
+            <div>
+              <div className="party-left">
+                <span className="color red"></span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Indian_Election_Symbol_Cycle.png" alt="MNS" className="party-logo" />
+                <span>SP</span>
+              </div>
+              <span>3</span>
+            </div>
+            <div>
+              <div className="party-left">
+                <span className="color green"></span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Nationalist_Congress_Party_Election_Symbol.png" alt="NCP" className="party-logo" />
+                <span>NCP</span>
+              </div>
+              <span>2</span>
+            </div>
+            <div>
+              <div className="party-left">
+                <span className="color gray"></span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/NOTA_Option_Logo.svg/1200px-NOTA_Option_Logo.svg.png" alt="NOTA" className="party-logo" />
+                <span>NOTA</span>
+              </div>
+              <span>0</span>
+            </div>
+            <div>
+              <div className="party-left">
+                <span className="color black"></span>
+                <img src="https://static.vecteezy.com/system/resources/previews/032/176/017/non_2x/business-avatar-profile-black-icon-man-of-user-symbol-in-trendy-flat-style-isolated-on-male-profile-people-diverse-face-for-social-network-or-web-vector.jpg" alt="Shiv Sena" className="party-logo" />
+                <span>Others</span>
+              </div>
+              <span>0</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </>
   );
 }
