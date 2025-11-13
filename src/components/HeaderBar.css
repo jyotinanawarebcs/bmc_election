@@ -1,0 +1,43 @@
+/* === Header Bar Styles === */
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #1a2238;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 30;
+  justify-content: flex-start;
+}
+
+.top-header h2 {
+  margin: 0;
+  margin-left: 15px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.sidebar-toggle:hover {
+  color: #b0c4ff;
+}
+
+.sidebar-toggle:focus,
+.sidebar-toggle:active {
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+}

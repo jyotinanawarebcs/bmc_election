@@ -1,0 +1,205 @@
+/* === Base === */
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  background: #f8f9fb;
+  color: #333;
+}
+
+/* === Layout === */
+.dashboard-container {
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.main-content {
+  flex: 1;
+  margin-top: 80px; /* below header */
+  padding: 30px;
+  transition: margin-left 0.3s ease;
+}
+
+.dashboard-container.sidebar-open .main-content {
+  margin-left: 250px;
+}
+
+/* === Candidate Header === */
+.candidate-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.candidate-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.candidate-header .subtext {
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.header-actions button {
+  margin-left: 10px;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  transition: background 0.2s;
+}
+
+.header-actions .btn {
+  background: #007bff;
+  color: white;
+  border: none;
+}
+
+.header-actions .btn-outline:hover,
+.header-actions .btn:hover {
+  background: #005fcc;
+  color: white;
+}
+
+/* === Summary Section === */
+.summary-section {
+  background: #eef4ff;
+  border: 1px solid #d3e3ff;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.summary-card {
+  background: white;
+  border-radius: 4px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.summary-card h4.positive {
+  color: green;
+}
+
+.summary-card h4.negative {
+  color: red;
+}
+
+/* === Stats Grid === */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card h3.positive {
+  color: green;
+}
+
+/* === Action Tracking === */
+.action-tracking table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.action-tracking th,
+.action-tracking td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.status.in-progress {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status.completed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status.not-started {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.overdue {
+  color: red;
+  font-size: 0.9rem;
+}
+
+/* === Map Section === */
+.map-placeholder {
+  height: 300px;
+  background: #eaeaea;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+/* === Insights === */
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #eee;
+}
+
+.insights-grid ul {
+  padding-left: 20px;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0 !important;
+    padding: 20px;
+  }
+
+  .summary-grid,
+  .stats-grid,
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+}
