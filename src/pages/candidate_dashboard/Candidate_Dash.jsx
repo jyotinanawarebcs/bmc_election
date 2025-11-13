@@ -18,7 +18,11 @@ export default function BmcElectionDashboard() {
     axios
       .get("http://127.0.0.1:8000/api/candidates/")
       .then((res) => {
-        setWards(res.data);
+        // Sort wards numerically by Ward_No
+        const sortedData = res.data.sort((a, b) => Number(a.Ward_No) - Number(b.Ward_No));
+        setWards(sortedData);
+
+
         if (res.data.length > 0) setSelectedWard(res.data[0]); // default: first ward
       })
       .catch((err) => console.error("Error fetching candidate data:", err));
@@ -46,6 +50,8 @@ export default function BmcElectionDashboard() {
             party: Winner.Party_Name,
             votes: Winner.Votes,
             percent: Winner.Vote_Share_Percentage,
+            margin: Winner.Margin,
+            marginPercent: Winner.Margin_Percentage,
           }}
         />
 
@@ -60,6 +66,8 @@ export default function BmcElectionDashboard() {
           winnerName={Winner.Candidate_Name}
           winnerParty={Winner.Party_Name}
           wardName={Ward_Name}
+          voteMargin={Winner.Margin}
+          marginPercent={Winner.Margin_Percentage}
         />
       </main>
     </div>

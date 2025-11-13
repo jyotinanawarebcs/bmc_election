@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function AnalysisSection({ winnerName, winnerParty, wardName }) {
+export default function AnalysisSection({ winnerName, winnerParty, wardName,voteMargin }) {
   return (
     <section className="analysis">
       <h4>
@@ -15,7 +15,7 @@ export default function AnalysisSection({ winnerName, winnerParty, wardName }) {
       <div className="cards">
         <div className="card">
           <h5>Vote Margin</h5>
-          <p className="highlight">+5,120</p>
+          <p className="highlight">{voteMargin.toLocaleString()}</p>
           <p className="info">
             Margin increased by 1,200 votes in the final hours of counting
             compared to initial trends.

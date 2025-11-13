@@ -6,6 +6,8 @@ export default function WinnerSection({ winner = {} }) {
     name = "—",
     party = "—",
     votes = 0,
+    margin = 0,
+    marginPercent = 0,
   } = winner;
 
   return (
@@ -14,7 +16,10 @@ export default function WinnerSection({ winner = {} }) {
         <p className="winner-title">Winner - Ward F/S, Seat 19</p>
         <h3>{name}</h3>
         <p className="party-info">
-          {party} • {votes.toLocaleString()} Votes (Winning Margin: —)
+          {party} • {votes.toLocaleString()} Votes {" "}
+          {margin > 0
+            ? `(Winning Margin: ${margin.toLocaleString()} votes, ${marginPercent}%)`
+            : "(Winning Margin: —)"}
         </p>
         <p className="desc">
           {name !== "—"
