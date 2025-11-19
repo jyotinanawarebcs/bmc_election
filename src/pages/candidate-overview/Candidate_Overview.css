@@ -176,6 +176,10 @@ body {
 }
 
 /* === Insights === */
+.insights-section{
+  margin-top: 20px;
+}
+
 .insights-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

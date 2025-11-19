@@ -1,0 +1,390 @@
+/* =========================================================
+   BASIC STYLING
+   ========================================================= */
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  background: #f8f9fb;
+  color: #333;
+}
+
+/* =========================================================
+   LAYOUT + SIDEBAR BEHAVIOR
+   ========================================================= */
+
+.dashboard-container {
+  display: flex;
+  width: 100%;
+  transition: margin-left 0.3s ease;
+}
+
+/* Sidebar default OPEN — page shrinks */
+.dashboard-container.sidebar-open .main {
+  margin-left: 250px;   /* Sidebar width */
+}
+
+/* Sidebar CLOSED — page stretches full width */
+.dashboard-container .main {
+  margin-left: 0;
+  flex: 1;
+  padding: 30px;
+  transition: margin-left 0.3s ease;
+}
+
+/* Sticky top header spacing */
+.main {
+  margin-top: 80px;
+}
+
+/* =========================================================
+   CANDIDATE HEADER
+   ========================================================= */
+
+.candidate-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.candidate-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.candidate-header .subtext {
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.header-actions button {
+  margin-left: 10px;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  transition: background 0.2s;
+}
+
+.header-actions .btn {
+  background: #007bff;
+  color: white;
+  border: none;
+}
+
+.header-actions .btn-outline:hover,
+.header-actions .btn:hover {
+  background: #005fcc;
+  color: white;
+}
+.profile img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 18px;
+}
+
+/* =========================================================
+   SUMMARY SECTION
+   ========================================================= */
+
+.summary-section {
+  background: #eef4ff;
+  border: 1px solid #d3e3ff;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.summary-card {
+  background: white;
+  border-radius: 4px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.summary-card h4.positive {
+  color: green;
+}
+
+.summary-card h4.negative {
+  color: red;
+}
+
+/* =========================================================
+   STATS (4-CARD GRID)
+   ========================================================= */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: white;
+  text-align: left;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card h3 {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.stat-card h2 {
+  margin-top: 8px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.stat-card h2.positive {
+  color: green;
+}
+
+/* =========================================================
+   ACTION TABLE
+   ========================================================= */
+
+.action-tracking table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.action-tracking th,
+.action-tracking td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.status.in-progress {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status.completed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status.not-started {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.overdue {
+  color: red;
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   MAP PLACEHOLDER
+   ========================================================= */
+
+.map-placeholder {
+  height: 300px;
+  background: #eaeaea;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+/* =========================================================
+   INSIGHTS GRID
+   ========================================================= */
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #eee;
+}
+
+.insights-grid ul {
+  padding-left: 20px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .dashboard-container.sidebar-open .main {
+    margin-left: 0 !important;
+  }
+
+  .main {
+    padding: 20px;
+  }
+
+  .summary-grid,
+  .stats-grid,
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.table-card {
+  background: #ffffff;
+  padding: 22px 26px;
+  border: 1px solid #e4e7ec;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+  /* width: 100%; */
+  margin-top: 25px;
+} 
+
+
+.table-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+/* Table Structure */
+.table-card table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+/* Table header */
+.table-card thead tr {
+  background: #f3f4f6;
+}
+
+.table-card th {
+  text-align: left;
+  padding: 12px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Table body */
+.table-card td {
+  padding: 8px 6px;
+  border-bottom: 1px solid #e7e7e7;
+  color: #333;
+}
+
+/* Hover effect on rows */
+.table-card tbody tr:hover {
+  background: #fafafa;
+}
+
+/* Classification Tag */
+.tag {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Color rules based on booth type */
+.tag:contains("High Potential") {
+  background: #e1f7e9;
+  color: #0f7a37;
+}
+
+.tag:contains("Opportunity") {
+  background: #e6efff;
+  color: #1e40af;
+}
+
+/* Candidate Share Column */
+.table-card td:last-child {
+  font-weight: 600;
+  color: #222;
+}
+/* Main container card */
+.side-card {
+  background: #ffffff;
+  padding: 22px 26px;
+  border: 1px solid #e4e7ec;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+  margin-top: 25px;
+  
+}
+
+/* Title */
+.side-card h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Each booth row */
+.performance-row {
+  margin-bottom: 18px;
+}
+
+.performance-row strong {
+  display: block;
+  font-size: 14.5px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* Bars container */
+.bars {
+  display: flex;
+  height: 9px;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #e5e7eb;
+}
+
+/* Candidate Bar */
+.candidate-bar {
+  background: #2563eb; /* Blue */
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+/* Party Bar */
+.party-bar {
+  background: #f97316; /* Orange */
+  height: 100%;
+  transition: width 0.4s ease;
+}

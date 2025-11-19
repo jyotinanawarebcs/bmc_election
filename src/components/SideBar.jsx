@@ -7,7 +7,7 @@ export default function Sidebar({ isOpen }) {
   return (
     <aside className={`sidebar ${isOpen ? "open" : ""}`}>
       <div className="sidebar-header">
-        <h2>BMC Elections 2027</h2>
+        <h2>BMC Elections</h2>
         <p>Analytics Dashboard</p>
       </div>
 
@@ -34,8 +34,18 @@ export default function Sidebar({ isOpen }) {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/settings" activeclassname="active">
-              Settings
+            <NavLink to="/candidate-dashboard1" activeclassname="active">
+              Candidate_Boothtable
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/candidate-comparison" activeclassname="active">
+              Candidate_Comparison
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/voters-list" activeclassname="active">
+              Voters_List
             </NavLink>
           </li>
         </ul>

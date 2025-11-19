@@ -1,0 +1,283 @@
+/* Main Container with Sidebar */
+
+.dashboard-container1 {
+  display: flex;
+  flex-direction: column; /* Ensure vertical layout */
+  width: 100%;
+  min-height: 100vh;
+  padding: 0; /* Reset padding */
+  background-color: #f9f9f9;
+  max-width: 1200px;
+  margin: 60px auto;
+  transition: margin-left 0.3s ease; /* Smooth transition when sidebar toggles */
+}
+
+/* Sidebar */
+.dashboard-container1 .sidebar {
+  width: 250px;
+  background: #fff;
+  border-right: 1px solid #e5e7eb;
+  position: fixed;
+  top: 60px; /* Below header */
+  left: 0;
+  height: calc(100vh - 60px); /* Full height minus header */
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 20;
+}
+
+/* Sidebar open state */
+.dashboard-container1.sidebar-open .sidebar {
+  transform: translateX(0); /* Sidebar shows when open */
+}
+
+/* Content Section */
+.dashboard-container1 .dashboard-content1 {
+  display: grid;
+  flex: 1;
+  padding: 30px;
+  padding-top: 60px; /* Add space for fixed header */
+  margin-left: 0; /* No left margin when sidebar is closed */
+  transition: margin-left 0.3s ease; /* Smooth transition for margin */
+  margin-right: 30px; /* Add some space on the right */
+}
+
+/* When the sidebar is open, push the content to the right */
+.dashboard-container1.sidebar-open .dashboard-content1 {
+  margin-left: 250px; /* Push content to the right when sidebar is open */
+}
+
+/* Header Styling */
+.dashboard-container1 .dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  position: fixed;
+  top: 0;
+  left: 80px; /* Adjusted for sidebar */
+  right: 0;
+  height: 60px;
+  background: #1a2238;
+  color: white;
+  z-index: 30;
+  padding: 0 20px;
+}
+
+.dashboard-container1 .header-left {
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-container1 .dashboard-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.dashboard-container1 .header-right {
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-container1 .search-btn {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.dashboard-container1 .user-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-container1 .user-icon img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.dashboard-container1 .notifications {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 3px;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+}
+
+.dashboard-container1 .dashboard-overview {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.dashboard-container1 .overview-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.dashboard-container1 .overview-description {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 10px;
+}
+.dashboard-container1 .overview-stats {
+  display: flex;
+  justify-content: space-between; /* optional, gap works better */
+  gap: 20px; /* adds space between the boxes */
+  margin: 30px 10px 10px 10px; /* top/right/bottom/left */
+}
+
+.dashboard-container1 .stat-box {
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1; /* allow it to grow evenly */
+}
+
+.dashboard-container1 .stat-label {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.dashboard-container1 .stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.dashboard-container1 .stat-time {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 10px;
+}
+
+/* Recent Updates Section */
+.dashboard-container1 .recent-updates {
+  margin-top: 40px;
+}
+
+.dashboard-container1 .updates-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.dashboard-container1 .update-item {
+  display: flex;
+  align-items: flex-start;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-container1 .update-icon {
+  font-size: 2rem;
+  margin-right: 20px;
+  color: #007bff;
+}
+
+.dashboard-container1 .update-content {
+  flex-grow: 1;
+}
+
+.dashboard-container1 .update-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.dashboard-container1 .update-time {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 5px;
+}
+
+.dashboard-container1 .update-detail {
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.dashboard-container1 .view-details-btn {
+  font-size: 0.9rem;
+  color: #007bff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 5px 10px;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .dashboard-container1 .overview-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dashboard-container1 .stat-box {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .dashboard-container1 .header-right {
+    display: block;
+    text-align: center;
+  }
+
+  .dashboard-container1 .search-btn {
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container1 .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-container1 .dashboard-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .dashboard-container1 .header-right {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .dashboard-container1 .recent-updates {
+    margin-top: 20px;
+  }
+
+  .dashboard-container1 .update-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-container1 .update-icon {
+    margin-bottom: 15px;
+  }
+
+  .dashboard-container1 .update-content {
+    text-align: left;
+  }
+}

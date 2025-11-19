@@ -16,7 +16,7 @@ export default function AnalysisSection({ winnerName, winnerParty, wardName,vote
         <div className="card">
           <h5>Vote Margin</h5>
           <p className="highlight">{voteMargin.toLocaleString()}</p>
-          <p className="info">
+          <p className="info1">
             Margin increased by 1,200 votes in the final hours of counting
             compared to initial trends.
           </p>
@@ -25,7 +25,7 @@ export default function AnalysisSection({ winnerName, winnerParty, wardName,vote
         <div className="card">
           <h5>Turnout % (Strong Areas)</h5>
           <p className="highlight blue">68.5%</p>
-          <p className="info">
+          <p className="info1">
             Opponent’s strong areas saw a lower turnout of 61.2%, a key factor
             in the victory.
           </p>
@@ -34,7 +34,7 @@ export default function AnalysisSection({ winnerName, winnerParty, wardName,vote
         <div className="card">
           <h5>Cross-Segment Correlation</h5>
           <p className="highlight orange">0.78</p>
-          <p className="info">
+          <p className="info1">
             Strong positive correlation with youth voters (18–25), while the
             opponent had a higher correlation with seniors (60+).
           </p>

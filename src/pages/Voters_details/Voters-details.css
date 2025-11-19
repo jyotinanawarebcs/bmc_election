@@ -1,0 +1,299 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* -----------------------------------
+   MAIN WRAPPER (RESPONSIVE TO SIDEBAR)
+--------------------------------------*/
+.dashboard-container2 {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #f9f9f9;
+  transition: margin-left 0.3s ease;
+  padding-top: 80px; /* Space below the fixed header */
+}
+
+/* -----------------------------------
+   MAIN WRAPPER (SHRINK ON SIDEBAR OPEN)
+--------------------------------------*/
+.dashboard-container2 {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 80px;
+  background: #f9f9f9;
+  transition: width 0.3s ease;
+}
+
+/* Sidebar is fixed, so content should shrink */
+.dashboard-container2.sidebar-open .dashboard-content2 {
+  margin-left: 250px;
+  width: calc(100% - 250px); /* SHRINK CONTENT */
+}
+
+/* Default full width */
+.dashboard-content2 {
+  width: 100%;
+  padding: 20px 60px;
+  transition: width 0.3s ease;
+}
+
+
+/* Inner page content */
+.dashboard-content2 {
+  width: 100%;
+  transition: margin-left 0.3s ease;
+  padding: 20px 60px; /* replaces your margin-left/right */
+}
+/* 
+.dashboard-container2.sidebar-open .dashboard-content2 {
+  margin-left: 0;
+} */
+
+/* -----------------------------------
+   PAGE CONTENT
+--------------------------------------*/
+.voter-detail-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f9f9f9;
+  padding-bottom: 80px;
+}
+
+/* -----------------------------------
+   TABS
+--------------------------------------*/
+.tabs {
+  display: flex;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+}
+
+.tab {
+  flex: 1;
+  padding: 14px;
+  font-size: 15px;
+  color: #666;
+  border: none;
+  background: none;
+}
+
+.tab.active {
+  color: #000;
+  border-bottom: 3px solid #007bff;
+  font-weight: 600;
+}
+
+/* -----------------------------------
+   PROFILE CARD
+--------------------------------------*/
+.profile-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  align-items: center;
+  margin-top: 20px;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #1a2238;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-inner {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  background-image: url('../../assets/profile1.png');
+  background-size: contain;
+}
+
+.profile-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #555;
+}
+
+/* -----------------------------------
+   DETAILS TABLE
+--------------------------------------*/
+.details-table {
+  background: white;
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.label {
+  width: 40%;
+  color: #333;
+}
+
+.value {
+  width: 60%;
+  text-align: right;
+  font-weight: 500;
+}
+
+/* -----------------------------------
+   EXTRA INFO
+--------------------------------------*/
+.extra-info {
+  background: white;
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.info-row {
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+}
+
+.mobile-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* -----------------------------------
+   COLOR CODE SECTION
+--------------------------------------*/
+.color-code-section {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.color-code-btn,
+.interest-btn {
+  flex: 1;
+  padding: 14px;
+  background: #007bff;
+  border-radius: 10px;
+  border: none;
+  color: black;
+}
+
+.star-btn {
+  width: 50px;
+  height: 50px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* -----------------------------------
+   VOTED TOGGLE
+--------------------------------------*/
+.voted-toggle {
+  background: white;
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.toggle-switch {
+  position: relative;
+  width: 52px;
+  height: 28px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  bottom: 3px;
+  left: 4px;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background: #007bff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+/* -----------------------------------
+   ACTION BUTTONS
+--------------------------------------*/
+.action-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  padding: 14px;
+  background: #007bff;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+}
+
+/* -----------------------------------
+   BOTTOM FULL BUTTON
+--------------------------------------*/
+.full-bottom-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  background: #007bff;
+  border: none;
+  font-weight: 600;
+}

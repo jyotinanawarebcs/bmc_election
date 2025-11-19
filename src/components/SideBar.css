@@ -120,6 +120,7 @@
 }
 
 .sidebar-nav a.active {
-  background-color: #1976d2;
+  background-color: #378ee6;
   font-weight: bold;
+  color: black;
 }

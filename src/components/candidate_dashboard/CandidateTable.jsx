@@ -17,6 +17,7 @@ export default function CandidateTable({ candidates }) {
       </section>
     );
   }
+  
 
   // Filter out the winner (Position = 1)
   const otherCandidates = candidates.filter(c => parseInt(c.Position) !== 1);

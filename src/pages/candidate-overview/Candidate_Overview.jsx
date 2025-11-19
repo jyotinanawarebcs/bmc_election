@@ -2,9 +2,33 @@ import React, { useState } from "react";
 import "./Candidate_Overview.css";
 import HeaderBar from "../../components/HeaderBar";
 import Sidebar from "../../components/SideBar";
+import { useEffect } from "react";
+import axios from "axios";
+import CandidateHeader from "../../components/candidate_overview/CandidateHeader";
 
 export default function Candidate_Overview() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [wards, setWards] = useState([]);
+  const [selectedWard, setSelectedWard] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/candidates/")
+      .then((res) => {
+        // Sort wards numerically by Ward_No
+        const sortedData = res.data.sort((a, b) => Number(a.Ward_No) - Number(b.Ward_No));
+        setWards(sortedData);
+
+
+        
+        if (res.data.length > 0) setSelectedWard(res.data[0]); // default: first ward
+      })
+      .catch((err) => console.error("Error fetching candidate data:", err));
+  }, []);
+
+  if (!selectedWard) return <div>Loading...</div>;
+  
+  const { Winner, Candidates, Ward_Name } = selectedWard;
 
   return (
     <div className={`dashboard-container ${sidebarOpen ? "sidebar-open" : ""}`}>
@@ -19,18 +43,15 @@ export default function Candidate_Overview() {
 
       {/* === Main Content === */}
       <main className="main-content">
-        <header className="candidate-header">
-          <div>
-            <h1>Priya Dutt</h1>
-            <p>Indian National Congress (INC)</p>
-            <p className="subtext">Mumbai South Constituency</p>
-          </div>
-          <div className="header-actions">
-            <button className="btn-outline">Compare</button>
-            <button className="btn">Print Report</button>
-          </div>
-        </header>
-
+        <CandidateHeader
+          winner={{
+            name: Winner.Candidate_Name,
+            party: Winner.Party_Name,
+            votes: Winner.Votes,
+            percent: Winner.Vote_Share_Percentage,
+            margin: Winner.Margin,
+            marginPercent: Winner.Margin_Percentage,
+          }}/>
         {/* Summary Section */}
         <section className="summary-section">
           <h3>Summary Differences vs. Arvind Sawant (SHS)</h3>
@@ -109,10 +130,10 @@ export default function Candidate_Overview() {
         </section>
 
         {/* Map Placeholder */}
-        <section className="map-section">
+        {/* <section className="map-section">
           <h3>Booth Classification Map</h3>
           <div className="map-placeholder">[Map Placeholder]</div>
-        </section>
+        </section> */}
 
         {/* Insights */}
         <section className="insights-section">

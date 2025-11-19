@@ -23,6 +23,7 @@ export default function BmcElectionDashboard() {
         setWards(sortedData);
 
 
+        
         if (res.data.length > 0) setSelectedWard(res.data[0]); // default: first ward
       })
       .catch((err) => console.error("Error fetching candidate data:", err));

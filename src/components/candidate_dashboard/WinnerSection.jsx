@@ -19,7 +19,7 @@ export default function WinnerSection({ winner = {} }) {
           {party} • {votes.toLocaleString()} Votes {" "}
           {margin > 0
             ? `(Winning Margin: ${margin.toLocaleString()} votes, ${marginPercent}%)`
-            : "(Winning Margin: —)"}
+            : `(Winning Margin: ${marginPercent}%)`}
         </p>
         <p className="desc">
           {name !== "—"
