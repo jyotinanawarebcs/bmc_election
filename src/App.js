@@ -4,14 +4,15 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recha
 import Select from 'react-select';
 import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
+import WardResultScreen from './candidate-page/WardResultScreen';
 
 
 
 const geoUrl = '/mumbai-wards-2012.geojson';
 
 // COMPLETE 2012 DATA (227 wards) - SAME AS BEFORE
-const full2012Data = {
+export const full2012Data = {
   // ZONE A (224-227)
   224: { party: 'Shiv Sena', votes: 8456, color: 'rgba(248, 120, 15, 1)' },
   225: { party: 'Shiv Sena', votes: 7890, color: 'rgba(248, 120, 15, 1)' },
@@ -305,7 +306,7 @@ const full2012Data = {
   default: { party: 'Independent', votes: 0, color: '#eee' }
 };
 
-const partyColors = {
+export const partyColors = {
   'Shiv Sena': 'rgba(248, 120, 15, 1)',
   'BJP': '#28b823ff',
   'Congress': '#4ECDC4',
@@ -334,7 +335,50 @@ const zoneOptions = [
   { value: 'S', label: 'S - Northeast (13)' },
   { value: 'T', label: 'T - North Suburbs (87)' }
 ];
-
+const parties = [
+    {
+      name: "Shiv Sena",
+      color: "orange",
+      seats: 39,
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Indian_Election_Symbol_Bow_And_Arrow.svg/1280px-Indian_Election_Symbol_Bow_And_Arrow.svg.png",
+    },
+    {
+      name: "BJP",
+      color: "saffron",
+      seats: 57,
+      logo: "https://upload.wikimedia.org/wikipedia/commons/e/e8/BJP_election_symbol.png",
+    },
+    {
+      name: "Congress",
+      color: "blue",
+      seats: 13,
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Hand_INC.svg/800px-Hand_INC.svg.png",
+    },
+    {
+      name: "SP",
+      color: "red",
+      seats: 3,
+      logo: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Indian_Election_Symbol_Cycle.png",
+    },
+    {
+      name: "NCP",
+      color: "green",
+      seats: 2,
+      logo: "https://upload.wikimedia.org/wikipedia/commons/2/28/Nationalist_Congress_Party_Election_Symbol.png",
+    },
+    {
+      name: "NOTA",
+      color: "gray",
+      seats: 0,
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/NOTA_Option_Logo.svg/1200px-NOTA_Option_Logo.svg.png",
+    },
+    {
+      name: "Others",
+      color: "black",
+      seats: 0,
+      logo: "https://static.vecteezy.com/system/resources/previews/032/176/017/non_2x/business-avatar-profile-black-icon-man-of-user-symbol-in-trendy-flat-style-isolated-on-male-profile-people-diverse-face-for-social-network-or-web-vector.jpg",
+    },
+  ];
 
 
 export default function App() {
@@ -345,6 +389,15 @@ export default function App() {
   const [view, setView] = useState('map'); // map,h stats, chart
   const [clickedWardData, setClickedWardData] = useState(null);
   const navigate = useNavigate();
+
+  const [geoData, setGeoData] = useState(null);
+
+useEffect(() => {
+  fetch("/mumbai-wards-2012.geojson")
+    .then((res) => res.json())
+    .then((data) => setGeoData(data));
+}, []);
+
 
   useEffect(() => {
   if (clickedWardData) {
@@ -397,7 +450,15 @@ export default function App() {
     setSeatCount(partyWins);
     console.log("✅ Total seats per party:", partyWins);
   }, []);
+  if (!geoData) return <p>Loading map...</p>;
 
+  return (
+    <WardResultScreen
+      geoData={geoData}
+      full2012Data={full2012Data}
+      partyColors={partyColors}
+    />
+  );
   return (
     <div>
       <h2>Party-wise Seat Count</h2>
@@ -480,7 +541,7 @@ export default function App() {
                           console.log('Clicked:', wardId);
                           setClickedWard(wardId);
                           setClickedWardData(geo.properties);
-                          // console.log(clickedWardData)
+                          setGeoData(geo.properties)
                         } else {
                           setClickedWard(null); // if clicked again, deselect
                         }
@@ -500,7 +561,9 @@ export default function App() {
       {/* MIDDLE SECTION - Population + Candidate Info */}
       <div className="section middle-section">
         {/* Population Card */}
-        <div className="card population-header">
+        <div className="card population-header"
+        onClick={() => navigate("/population-page")}
+        style={{ cursor: "pointer" }}>
           <div className="population-title">
             <h3>Population:</h3>
             <div className="population-info">
@@ -532,7 +595,12 @@ export default function App() {
   {/* Candidate Card */}
   <div 
   className="card candidate-card" 
-  onClick={() => navigate(`/candidate-page/${clickedWard}`)}  // 👈 navigate to details page
+  onClick={() =>
+  navigate(`/candidate-page/${clickedWard}`, {
+    state: { clickedWardData, geoData },
+  })
+}
+
   style={{ cursor: "pointer" }} // 👈 optional, makes it clickable
 >
 
@@ -611,72 +679,43 @@ export default function App() {
 </div>
 
       {/* RIGHT SECTION - Mumbai Seats */}
+      {/* <Link to="/mumbai-seats" style={{ textDecoration: "none", color: "inherit" }}></Link> */}
       <div className="section right-section">
-        <div className="card seats-card">
-          <h3>Mumbai</h3>
-          <div className="seats-total">
-            <h2>227</h2>
-            <p>Total Seats</p>
-          </div>
+        <div
+        className="card seats-card"
+        onClick={() => navigate("/mumbai-seats")}
+        style={{ cursor: "pointer" }}
+      >
+        <h3>Mumbai</h3>
+        <div className="seats-total">
+          <h2>227</h2>
+          <p>Total Seats</p>
+        </div>
 
-          <div className="party-list">
-            <div>
+        <div className="party-list">
+          {parties.map((party) => (
+            <div
+              key={party.name}
+              className="party-item"
+              onClick={(e) => {
+                e.stopPropagation(); // Prevents parent navigation
+                navigate(`/party-details/${party.name}`);
+              }}
+              style={{ cursor: "pointer" }}
+            >
               <div className="party-left">
-                <span className="color orange"></span>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Indian_Election_Symbol_Bow_And_Arrow.svg/1280px-Indian_Election_Symbol_Bow_And_Arrow.svg.png" alt="Shiv Sena" className="party-logo" />
-                <span>Shiv Sena</span>
+                <span className={`color ${party.color}`}></span>
+                <img
+                  src={party.logo}
+                  alt={party.name}
+                  className="party-logo"
+                />
+                <span>{party.name}</span>
               </div>
-              <span>39</span>
+              <span>{party.seats}</span>
             </div>
-            <div>
-              <div className="party-left">
-                <span className="color saffron"></span>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/BJP_election_symbol.png" alt="BJP" className="party-logo" />
-                <span>BJP</span>
-              </div>
-              <span>57</span>
-            </div>
-            <div>
-              <div className="party-left">
-                <span className="color blue"></span>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Hand_INC.svg/800px-Hand_INC.svg.png" alt="Congress" className="party-logo" />
-                <span>Congress</span>
-              </div>
-              <span>13</span>
-            </div>
-            <div>
-              <div className="party-left">
-                <span className="color red"></span>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Indian_Election_Symbol_Cycle.png" alt="MNS" className="party-logo" />
-                <span>SP</span>
-              </div>
-              <span>3</span>
-            </div>
-            <div>
-              <div className="party-left">
-                <span className="color green"></span>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Nationalist_Congress_Party_Election_Symbol.png" alt="NCP" className="party-logo" />
-                <span>NCP</span>
-              </div>
-              <span>2</span>
-            </div>
-            <div>
-              <div className="party-left">
-                <span className="color gray"></span>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/NOTA_Option_Logo.svg/1200px-NOTA_Option_Logo.svg.png" alt="NOTA" className="party-logo" />
-                <span>NOTA</span>
-              </div>
-              <span>0</span>
-            </div>
-            <div>
-              <div className="party-left">
-                <span className="color black"></span>
-                <img src="https://static.vecteezy.com/system/resources/previews/032/176/017/non_2x/business-avatar-profile-black-icon-man-of-user-symbol-in-trendy-flat-style-isolated-on-male-profile-people-diverse-face-for-social-network-or-web-vector.jpg" alt="Shiv Sena" className="party-logo" />
-                <span>Others</span>
-              </div>
-              <span>0</span>
-            </div>
-          </div>
+          ))}
+        </div>
         </div>
       </div>
     </div>

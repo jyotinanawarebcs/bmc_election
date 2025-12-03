@@ -1,0 +1,58 @@
+.three-section-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.ward-section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  width: 32%;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ward-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.ward-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.divider {
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.booth-title {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.booth-table {
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.booth-header,
+.booth-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 6px 0;
+}
+
+.booth-header {
+  font-weight: bold;
+  border-bottom: 2px solid #333;
+}
+
+.booth-row:nth-child(even) {
+  background-color: #f9f9f9;
+}

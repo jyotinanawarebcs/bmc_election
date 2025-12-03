@@ -1,0 +1,1012 @@
+[
+ {
+   "A": "Ward No.",
+   "B": "Locality",
+   "C": "Winner Name",
+   "D": "Party",
+   "E": "Votes",
+   "F": "Runner-up (Name + Party)",
+   "G": "3rd Place (Name + Party)",
+   "H": "Total Candidates"
+ },
+ {
+   "A": "1",
+   "B": "Kalyan East",
+   "C": "Rajan Devalakar",
+   "D": "Shiv Sena",
+   "E": "1234",
+   "F": "Sanjay Patil (BJP)",
+   "G": "Mangesh Jadhav (Ind.)",
+   "H": "6"
+ },
+ {
+   "A": "2",
+   "B": "Kalyan East",
+   "C": "Sanjay Patil",
+   "D": "BJP",
+   "E": "1156",
+   "F": "Meena More (SS)",
+   "G": "Anil Kadam (MNS)",
+   "H": "7"
+ },
+ {
+   "A": "3",
+   "B": "Kalyan East",
+   "C": "Meena More",
+   "D": "Shiv Sena",
+   "E": "1089",
+   "F": "Vijay Salvi (SS)",
+   "G": "Sunita Gaikwad (Ind.)",
+   "H": "5"
+ },
+ {
+   "A": "4",
+   "B": "Kalyan East",
+   "C": "Vijay Salvi",
+   "D": "Shiv Sena",
+   "E": "1312",
+   "F": "Anita Jadhav (BJP)",
+   "G": "Ramesh Patil (MNS)",
+   "H": "8"
+ },
+ {
+   "A": "5",
+   "B": "Kalyan East",
+   "C": "Anita Jadhav",
+   "D": "BJP",
+   "E": "1045",
+   "F": "Sunil Chavan (SS)",
+   "G": "Kavita Bhoir (Ind.)",
+   "H": "6"
+ },
+ {
+   "A": "6",
+   "B": "Kalyan East",
+   "C": "Sunil Chavan",
+   "D": "Shiv Sena",
+   "E": "1178",
+   "F": "Ramesh Jadhav (BJP)",
+   "G": "Pramod More (MNS)",
+   "H": "7"
+ },
+ {
+   "A": "7",
+   "B": "Kalyan East",
+   "C": "Ramesh Jadhav",
+   "D": "BJP",
+   "E": "1201",
+   "F": "Ganesh Patil (SS)",
+   "G": "Sheetal Gaikwad (RPI)",
+   "H": "6"
+ },
+ {
+   "A": "8",
+   "B": "Kalyan East",
+   "C": "Ganesh Patil",
+   "D": "Shiv Sena",
+   "E": "1298",
+   "F": "Pooja Nikam (BJP)",
+   "G": "Rajesh More (Ind.)",
+   "H": "5"
+ },
+ {
+   "A": "9",
+   "B": "Kalyan East",
+   "C": "Pooja Nikam",
+   "D": "BJP",
+   "E": "1110",
+   "F": "Vinay Gole (SS)",
+   "G": "Subhash Bhoir (MNS)",
+   "H": "7"
+ },
+ {
+   "A": "10",
+   "B": "Kalyan East",
+   "C": "Vinay Gole",
+   "D": "Shiv Sena",
+   "E": "1300",
+   "F": "Kavita Patil (BJP)",
+   "G": "Mahesh Gaikwad (Ind.)",
+   "H": "6"
+ },
+ {
+   "A": "11",
+   "B": "Kalyan West",
+   "C": "Kavita Patil",
+   "D": "Shiv Sena",
+   "E": "1678",
+   "F": "Mahesh Gaikwad (BJP)",
+   "G": "Pramod Patil (MNS)",
+   "H": "8"
+ },
+ {
+   "A": "12",
+   "B": "Kalyan West",
+   "C": "Sheetal Gaikwad",
+   "D": "RPI",
+   "E": "987",
+   "F": "Pooja Mhatre (SS)",
+   "G": "Sanjay More (BJP)",
+   "H": "5"
+ },
+ {
+   "A": "13",
+   "B": "Kalyan West",
+   "C": "Pooja Mhatre",
+   "D": "Shiv Sena",
+   "E": "1456",
+   "F": "Sanjay More (BJP)",
+   "G": "Anil Jadhav (MNS)",
+   "H": "6"
+ },
+ {
+   "A": "14",
+   "B": "Kalyan West",
+   "C": "Sanjay More",
+   "D": "BJP",
+   "E": "1189",
+   "F": "Anil Jadhav (SS)",
+   "G": "Kavita Jadhav (Ind.)",
+   "H": "7"
+ },
+ {
+   "A": "15",
+   "B": "Kalyan West",
+   "C": "Anil Jadhav",
+   "D": "Shiv Sena",
+   "E": "1210",
+   "F": "Kavita Jadhav (BJP)",
+   "G": "Rajan Devalakar (Ind.)",
+   "H": "6"
+ },
+ {
+   "A": "16",
+   "B": "Kalyan West",
+   "C": "Rajan Devalakar",
+   "D": "Shiv Sena",
+   "E": "1100",
+   "F": "Sunil Gaikwad (BJP)",
+   "G": "Meena Patil (MNS)",
+   "H": "5"
+ },
+ {
+   "A": "17",
+   "B": "Kalyan West",
+   "C": "Sunil Gaikwad",
+   "D": "BJP",
+   "E": "1234",
+   "F": "Meena Patil (SS)",
+   "G": "Vijay More (Ind.)",
+   "H": "6"
+ },
+ {
+   "A": "18",
+   "B": "Kalyan West",
+   "C": "Meena Patil",
+   "D": "Shiv Sena",
+   "E": "1156",
+   "F": "Vijay More (BJP)",
+   "G": "Anita Chavan (MNS)",
+   "H": "7"
+ },
+ {
+   "A": "19",
+   "B": "Kalyan West",
+   "C": "Vijay More",
+   "D": "BJP",
+   "E": "1089",
+   "F": "Anita Chavan (SS)",
+   "G": "Ramesh Salvi (Ind.)",
+   "H": "5"
+ },
+ {
+   "A": "20",
+   "B": "Kalyan Rural",
+   "C": "Pramod Patil",
+   "D": "MNS",
+   "E": "1050",
+   "F": "Rajesh More (SS)",
+   "G": "Ganesh Jadhav (BJP)",
+   "H": "6"
+ },
+ {
+   "A": "21",
+   "B": "Kalyan Rural",
+   "C": "Rajesh More",
+   "D": "Shiv Sena",
+   "E": "1420",
+   "F": "Ganesh Jadhav (BJP)",
+   "G": "Subhash Bhoir (MNS)",
+   "H": "7"
+ },
+ {
+   "A": "22",
+   "B": "Kalyan Rural",
+   "C": "Ganesh Jadhav",
+   "D": "BJP",
+   "E": "980",
+   "F": "Subhash Bhoir (MNS)",
+   "G": "Kavita More (Ind.)",
+   "H": "5"
+ },
+ {
+   "A": "23",
+   "B": "Kalyan Rural",
+   "C": "Subhash Bhoir",
+   "D": "MNS",
+   "E": "1178",
+   "F": "Kavita More (SS)",
+   "G": "Sanjay Gaikwad (BJP)",
+   "H": "6"
+ },
+ {
+   "A": "24",
+   "B": "Kalyan Rural",
+   "C": "Kavita More",
+   "D": "Shiv Sena",
+   "E": "1201",
+   "F": "Sanjay Gaikwad (BJP)",
+   "G": "Pooja Salvi (Ind.)",
+   "H": "7"
+ },
+ {
+   "A": "25",
+   "B": "Kalyan Rural",
+   "C": "Sanjay Gaikwad",
+   "D": "BJP",
+   "E": "1298",
+   "F": "Pooja Salvi (SS)",
+   "G": "Anil More (MNS)",
+   "H": "6"
+ },
+ {
+   "A": "26",
+   "B": "Kalyan Rural",
+   "C": "Pooja Salvi",
+   "D": "Shiv Sena",
+   "E": "1110",
+   "F": "Anil More (BJP)",
+   "G": "Meena Jadhav (Ind.)",
+   "H": "5"
+ },
+ {
+   "A": "27",
+   "B": "Kalyan Rural",
+   "C": "Anil More",
+   "D": "BJP",
+   "E": "1300",
+   "F": "Meena Jadhav (SS)",
+   "G": "Rajan Patil (MNS)",
+   "H": "6"
+ },
+ {
+   "A": "28",
+   "B": "Kalyan Rural",
+   "C": "Meena Jadhav",
+   "D": "Shiv Sena",
+   "E": "1678",
+   "F": "Rajan Patil (BJP)",
+   "G": "Sunil More (Ind.)",
+   "H": "7"
+ },
+ {
+   "A": "29",
+   "B": "Kalyan Rural",
+   "C": "Rajan Patil",
+   "D": "BJP",
+   "E": "987",
+   "F": "Sunil More (SS)",
+   "G": "Vijay Chavan (MNS)",
+   "H": "5"
+ },
+ {
+   "A": "30",
+   "B": "Kalyan Rural",
+   "C": "Sunil More",
+   "D": "Shiv Sena",
+   "E": "1456",
+   "F": "Vijay Chavan (BJP)",
+   "G": "Anita Gaikwad (Ind.)",
+   "H": "6"
+ },
+ {
+   "A": "31",
+   "B": "Kalyan West",
+   "C": "Vijay Chavan",
+   "D": "BJP",
+   "E": "1189",
+   "F": "Anita Gaikwad (SS)",
+   "G": "Ramesh More (MNS)",
+   "H": "7"
+ },
+ {
+   "A": "32",
+   "B": "Kalyan West",
+   "C": "Anita Gaikwad",
+   "D": "Shiv Sena",
+   "E": "1210",
+   "F": "Ramesh More (BJP)",
+   "G": "Kavita Bhoir (Ind.)",
+   "H": "6"
+ },
+ {
+   "A": "33",
+   "B": "Kalyan West",
+   "C": "Ramesh More",
+   "D": "BJP",
+   "E": "1100",
+   "F": "Kavita Bhoir (SS)",
+   "G": "Pramod Jadhav (MNS)",
+   "H": "5"
+ },
+ {
+   "A": "34",
+   "B": "Kalyan West",
+   "C": "Kavita Bhoir",
+   "D": "Shiv Sena",
+   "E": "1234",
+   "F": "Pramod Jadhav (BJP)",
+   "G": "Sanjay Patil (Ind.)",
+   "H": "6"
+ },
+ {
+   "A": "35",
+   "B": "Kalyan West",
+   "C": "Pramod Jadhav",
+   "D": "BJP",
+   "E": "1156",
+   "F": "Sanjay Patil (SS)",
+   "G": "Meena More (MNS)",
+   "H": "7"
+ },
+ {
+   "A": "36",
+   "B": "Kalyan West",
+   "C": "Sanjay Patil",
+   "D": "Shiv Sena",
+   "E": "1089",
+   "F": "Meena More (BJP)",
+   "G": "Vijay Salvi (Ind.)",
+   "H": "5"
+ },
+ {
+   "A": "37",
+   "B": "Kalyan East",
+   "C": "Meena More",
+   "D": "BJP",
+   "E": "1312",
+   "F": "Vijay Salvi (SS)",
+   "G": "Anita Jadhav (MNS)",
+   "H": "6"
+ },
+ {
+   "A": "38",
+   "B": "Kalyan East",
+   "C": "Vijay Salvi",
+   "D": "Shiv Sena",
+   "E": "1045",
+   "F": "Anita Jadhav (BJP)",
+   "G": "Sunil Chavan (Ind.)",
+   "H": "7"
+ },
+ {
+   "A": "39",
+   "B": "Kalyan East",
+   "C": "Anita Jadhav",
+   "D": "BJP",
+   "E": "1178",
+   "F": "Sunil Chavan (SS)",
+   "G": "Ramesh Jadhav (MNS)",
+   "H": "6"
+ },
+ {
+   "A": "40",
+   "B": "Kalyan East",
+   "C": "Sunil Chavan",
+   "D": "Shiv Sena",
+   "E": "1201",
+   "F": "Ramesh Jadhav (BJP)",
+   "G": "Ganesh Patil (Ind.)",
+   "H": "5"
+ },
+ {
+   "A": "41",
+   "B": "Kalyan East",
+   "C": "Ramesh Jadhav",
+   "D": "BJP",
+   "E": "1298",
+   "F": "Ganesh Patil (SS)",
+   "G": "Pooja Nikam (MNS)",
+   "H": "6"
+ },
+ {
+   "A": "42",
+   "B": "Kalyan East",
+   "C": "Ganesh Patil",
+   "D": "Shiv Sena",
+   "E": "1110",
+   "F": "Pooja Nikam (BJP)",
+   "G": "Vinay Gole (Ind.)",
+   "H": "7"
+ },
+ {
+   "A": "43",
+   "B": "Kalyan East",
+   "C": "Pooja Nikam",
+   "D": "BJP",
+   "E": "1300",
+   "F": "Vinay Gole (SS)",
+   "G": "Kavita Patil (MNS)",
+   "H": "6"
+ },
+ {
+   "A": "44",
+   "B": "Kalyan East",
+   "C": "Vinay Gole",
+   "D": "Shiv Sena",
+   "E": "1678",
+   "F": "Kavita Patil (BJP)",
+   "G": "Mahesh Gaikwad (Ind.)",
+   "H": "5"
+ },
+ {
+   "A": "45",
+   "B": "Kalyan West",
+   "C": "Kavita Patil",
+   "D": "BJP",
+   "E": "987",
+   "F": "Mahesh Gaikwad (SS)",
+   "G": "Sheetal Gaikwad (RPI)",
+   "H": "6"
+ },
+ {
+   "A": "46",
+   "B": "Kalyan West",
+   "C": "Mahesh Gaikwad",
+   "D": "Shiv Sena",
+   "E": "1456",
+   "F": "Sheetal Gaikwad (BJP)",
+   "G": "Pooja Mhatre (MNS)",
+   "H": "7"
+ },
+ {
+   "A": "47",
+   "B": "Kalyan West",
+   "C": "Sheetal Gaikwad",
+   "D": "RPI",
+   "E": "1189",
+   "F": "Pooja Mhatre (SS)",
+   "G": "Sanjay More (Ind.)",
+   "H": "5"
+ },
+ {
+   "A": "48",
+   "B": "Kalyan West",
+   "C": "Pooja Mhatre",
+   "D": "Shiv Sena",
+   "E": "1210",
+   "F": "Sanjay More (BJP)",
+   "G": "Anil Jadhav (MNS)",
+   "H": "6"
+ },
+ {
+   "A": "49",
+   "B": "Kalyan West",
+   "C": "Sanjay More",
+   "D": "BJP",
+   "E": "1100",
+   "F": "Anil Jadhav (SS)",
+   "G": "Rajan Devalakar (Ind.)",
+   "H": "7"
+ },
+ {
+   "A": "50",
+   "B": "Kalyan West",
+   "C": "Anil Jadhav",
+   "D": "Shiv Sena",
+   "E": "1234",
+   "F": "Rajan Devalakar (BJP)",
+   "G": "Sunil Gaikwad (MNS)",
+   "H": "6"
+ },
+ {
+   "A": "51",
+   "B": "Kalyan Rural",
+   "C": "Rajan Devalakar",
+   "D": "BJP",
+   "E": "1156",
+   "F": "Sunil Gaikwad (SS)",
+   "G": "Meena Patil (Ind.)",
+   "H": "5"
+ },
+ {
+   "A": "52",
+   "B": "Kalyan Rural",
+   "C": "Sunil Gaikwad",
+   "D": "Shiv Sena",
+   "E": "1089",
+   "F": "Meena Patil (BJP)",
+   "G": "Vijay More (MNS)",
+   "H": "6"
+ },
+ {
+   "A": "53",
+   "B": "Kalyan Rural",
+   "C": "Meena Patil",
+   "D": "BJP",
+   "E": "1312",
+   "F": "Vijay More (SS)",
+   "G": "Anita Chavan (Ind.)",
+   "H": "7"
+ },
+ {
+   "A": "54",
+   "B": "Kalyan Rural",
+   "C": "Vijay More",
+   "D": "Shiv Sena",
+   "E": "1045",
+   "F": "Anita Chavan (BJP)",
+   "G": "Pramod Patil (MNS)",
+   "H": "6"
+ },
+ {
+   "A": "55",
+   "B": "Kalyan Rural",
+   "C": "Anita Chavan",
+   "D": "BJP",
+   "E": "1178",
+   "F": "Pramod Patil (SS)",
+   "G": "Rajesh More (Ind.)",
+   "H": "5"
+ },
+ {
+   "A": "56",
+   "B": "Kalyan Rural",
+   "C": "Pramod Patil",
+   "D": "MNS",
+   "E": "1201",
+   "F": "Rajesh More (SS)",
+   "G": "Ganesh Jadhav (BJP)",
+   "H": "6"
+ },
+ {
+   "A": "57",
+   "B": "Kalyan Rural",
+   "C": "Rajesh More",
+   "D": "Shiv Sena",
+   "E": "1298",
+   "F": "Ganesh Jadhav (BJP)",
+   "G": "Subhash Bhoir (MNS)",
+   "H": "7"
+ },
+ {
+   "A": "58",
+   "B": "Kalyan Rural",
+   "C": "Ganesh Jadhav",
+   "D": "BJP",
+   "E": "1110",
+   "F": "Subhash Bhoir (SS)",
+   "G": "Kavita More (Ind.)",
+   "H": "6"
+ },
+ {
+   "A": "59",
+   "B": "Kalyan Rural",
+   "C": "Subhash Bhoir",
+   "D": "MNS",
+   "E": "1300",
+   "F": "Kavita More (BJP)",
+   "G": "Sanjay Gaikwad (SS)",
+   "H": "5"
+ },
+ {
+   "A": "60",
+   "B": "Kalyan Rural",
+   "C": "Kavita More",
+   "D": "Shiv Sena",
+   "E": "1678",
+   "F": "Sanjay Gaikwad (BJP)",
+   "G": "Pooja Salvi (Ind.)",
+   "H": "6"
+ },
+ {
+   "A": "61",
+   "B": "Dombivli East",
+   "C": "Subhash Buchade",
+   "D": "INC",
+   "E": "1456",
+   "F": "Archana Pagar (BJP)",
+   "G": "Satyajit Kadam (SS)",
+   "H": "7"
+ },
+ {
+   "A": "62",
+   "B": "Dombivli East",
+   "C": "Shrawan Fadtare",
+   "D": "INC",
+   "E": "1210",
+   "F": "Kavita Mane (BJP)",
+   "G": "Surmanjiri Latkar (NCP)",
+   "H": "6"
+ },
+ {
+   "A": "63",
+   "B": "Dombivli East",
+   "C": "Sandip Nejdar",
+   "D": "INC",
+   "E": "1100",
+   "F": "Nilesh Desai (BJP)",
+   "G": "Arjun Mane (SS)",
+   "H": "5"
+ },
+ {
+   "A": "64",
+   "B": "Dombivli East",
+   "C": "Madhuri Lad",
+   "D": "INC",
+   "E": "1312",
+   "F": "Rajaram Gaikwad (BJP)",
+   "G": "Rahul Chavan (SS)",
+   "H": "8"
+ },
+ {
+   "A": "65",
+   "B": "Dombivli East",
+   "C": "Ashok Jadhav",
+   "D": "INC",
+   "E": "1045",
+   "F": "Dilip Powar (SS)",
+   "G": "Ashish Dhawale (BJP)",
+   "H": "6"
+ },
+ {
+   "A": "66",
+   "B": "Dombivli East",
+   "C": "Swami Yawluje",
+   "D": "INC",
+   "E": "1178",
+   "F": "Smita Mane (BJP)",
+   "G": "Sima Kadam (SS)",
+   "H": "7"
+ },
+ {
+   "A": "67",
+   "B": "Dombivli East",
+   "C": "Archana Pagar",
+   "D": "BJP",
+   "E": "1201",
+   "F": "Rajsinh Shelke (BJP)",
+   "G": "Surekh Shah (INC)",
+   "H": "6"
+ },
+ {
+   "A": "68",
+   "B": "Dombivli East",
+   "C": "Satyajit Kadam",
+   "D": "BJP",
+   "E": "1298",
+   "F": "Kamlakar Bhopale (BJP)",
+   "G": "Shobha Kawale (INC)",
+   "H": "5"
+ },
+ {
+   "A": "69",
+   "B": "Dombivli East",
+   "C": "Kavita Mane",
+   "D": "BJP",
+   "E": "1110",
+   "F": "Uma Ingale (BJP)",
+   "G": "Sanjay Mohite (INC)",
+   "H": "7"
+ },
+ {
+   "A": "70",
+   "B": "Dombivli East",
+   "C": "Surmanjiri Latkar",
+   "D": "NCP",
+   "E": "1300",
+   "F": "Pooja Naiknavare (BJP)",
+   "G": "Nilofar Ajrekar (Ind.)",
+   "H": "6"
+ },
+ {
+   "A": "71",
+   "B": "Dombivli West",
+   "C": "Nilesh Desai",
+   "D": "BJP",
+   "E": "1678",
+   "F": "Rajaram Gaikwad (BJP)",
+   "G": "Arjun Mane (INC)",
+   "H": "8"
+ },
+ {
+   "A": "72",
+   "B": "Dombivli West",
+   "C": "Arjun Mane",
+   "D": "INC",
+   "E": "987",
+   "F": "Rahul Chavan (SS)",
+   "G": "Dilip Powar (INC)",
+   "H": "5"
+ },
+ {
+   "A": "73",
+   "B": "Dombivli West",
+   "C": "Rajaram Gaikwad",
+   "D": "BJP",
+   "E": "1456",
+   "F": "Ashish Dhawale (BJP)",
+   "G": "Smita Mane (SS)",
+   "H": "6"
+ },
+ {
+   "A": "74",
+   "B": "Dombivli West",
+   "C": "Rahul Chavan",
+   "D": "SS",
+   "E": "1189",
+   "F": "Sima Kadam (BJP)",
+   "G": "Rajsinh Shelke (SS)",
+   "H": "7"
+ },
+ {
+   "A": "75",
+   "B": "Dombivli West",
+   "C": "Dilip Powar",
+   "D": "INC",
+   "E": "1210",
+   "F": "Surekh Shah (INC)",
+   "G": "Kamlakar Bhopale (BJP)",
+   "H": "6"
+ },
+ {
+   "A": "76",
+   "B": "Dombivli West",
+   "C": "Ashish Dhawale",
+   "D": "BJP",
+   "E": "1100",
+   "F": "Shobha Kawale (INC)",
+   "G": "Uma Ingale (BJP)",
+   "H": "5"
+ },
+ {
+   "A": "77",
+   "B": "Dombivli West",
+   "C": "Smita Mane",
+   "D": "BJP",
+   "E": "1234",
+   "F": "Sanjay Mohite (INC)",
+   "G": "Pooja Naiknavare (BJP)",
+   "H": "6"
+ },
+ {
+   "A": "78",
+   "B": "Dombivli West",
+   "C": "Sima Kadam",
+   "D": "BJP",
+   "E": "1156",
+   "F": "Nilofar Ajrekar (Ind.)",
+   "G": "Rajaram Gaikwad (BJP)",
+   "H": "7"
+ },
+ {
+   "A": "79",
+   "B": "Dombivli West",
+   "C": "Rajsinh Shelke",
+   "D": "BJP",
+   "E": "1089",
+   "F": "Arjun Mane (INC)",
+   "G": "Rahul Chavan (SS)",
+   "H": "5"
+ },
+ {
+   "A": "80",
+   "B": "Dombivli East",
+   "C": "Surekh Shah",
+   "D": "INC",
+   "E": "1050",
+   "F": "Dilip Powar (INC)",
+   "G": "Ashish Dhawale (BJP)",
+   "H": "6"
+ },
+ {
+   "A": "81",
+   "B": "Dombivli East",
+   "C": "Kamlakar Bhopale",
+   "D": "BJP",
+   "E": "1420",
+   "F": "Smita Mane (BJP)",
+   "G": "Sima Kadam (SS)",
+   "H": "7"
+ },
+ {
+   "A": "82",
+   "B": "Dombivli East",
+   "C": "Shobha Kawale",
+   "D": "INC",
+   "E": "980",
+   "F": "Uma Ingale (BJP)",
+   "G": "Sanjay Mohite (INC)",
+   "H": "5"
+ },
+ {
+   "A": "83",
+   "B": "Dombivli East",
+   "C": "Uma Ingale",
+   "D": "BJP",
+   "E": "1178",
+   "F": "Pooja Naiknavare (BJP)",
+   "G": "Nilofar Ajrekar (Ind.)",
+   "H": "6"
+ },
+ {
+   "A": "84",
+   "B": "Dombivli East",
+   "C": "Sanjay Mohite",
+   "D": "INC",
+   "E": "1201",
+   "F": "Rajaram Gaikwad (BJP)",
+   "G": "Arjun Mane (INC)",
+   "H": "7"
+ },
+ {
+   "A": "85",
+   "B": "Dombivli West",
+   "C": "Pooja Naiknavare",
+   "D": "BJP",
+   "E": "1298",
+   "F": "Rahul Chavan (SS)",
+   "G": "Dilip Powar (INC)",
+   "H": "6"
+ },
+ {
+   "A": "86",
+   "B": "Dombivli West",
+   "C": "Nilofar Ajrekar",
+   "D": "Ind.",
+   "E": "1110",
+   "F": "Ashish Dhawale (BJP)",
+   "G": "Smita Mane (SS)",
+   "H": "5"
+ },
+ {
+   "A": "87",
+   "B": "Dombivli West",
+   "C": "Subhash Buchade",
+   "D": "INC",
+   "E": "1300",
+   "F": "Sima Kadam (BJP)",
+   "G": "Rajsinh Shelke (SS)",
+   "H": "6"
+ },
+ {
+   "A": "88",
+   "B": "Dombivli West",
+   "C": "Shrawan Fadtare",
+   "D": "INC",
+   "E": "1678",
+   "F": "Surekh Shah (INC)",
+   "G": "Kamlakar Bhopale (BJP)",
+   "H": "7"
+ },
+ {
+   "A": "89",
+   "B": "Dombivli East",
+   "C": "Sandip Nejdar",
+   "D": "INC",
+   "E": "987",
+   "F": "Shobha Kawale (INC)",
+   "G": "Uma Ingale (BJP)",
+   "H": "5"
+ },
+ {
+   "A": "90",
+   "B": "Dombivli East",
+   "C": "Madhuri Lad",
+   "D": "INC",
+   "E": "1456",
+   "F": "Sanjay Mohite (INC)",
+   "G": "Pooja Naiknavare (BJP)",
+   "H": "6"
+ },
+ {
+   "A": "91",
+   "B": "Dombivli East",
+   "C": "Ashok Jadhav",
+   "D": "INC",
+   "E": "1189",
+   "F": "Nilofar Ajrekar (Ind.)",
+   "G": "Rajaram Gaikwad (BJP)",
+   "H": "7"
+ },
+ {
+   "A": "92",
+   "B": "Dombivli East",
+   "C": "Swami Yawluje",
+   "D": "INC",
+   "E": "1210",
+   "F": "Arjun Mane (INC)",
+   "G": "Rahul Chavan (SS)",
+   "H": "6"
+ },
+ {
+   "A": "93",
+   "B": "Dombivli West",
+   "C": "Archana Pagar",
+   "D": "BJP",
+   "E": "1100",
+   "F": "Dilip Powar (INC)",
+   "G": "Ashish Dhawale (BJP)",
+   "H": "5"
+ },
+ {
+   "A": "94",
+   "B": "Dombivli West",
+   "C": "Satyajit Kadam",
+   "D": "BJP",
+   "E": "1234",
+   "F": "Smita Mane (BJP)",
+   "G": "Sima Kadam (SS)",
+   "H": "6"
+ },
+ {
+   "A": "95",
+   "B": "Dombivli West",
+   "C": "Kavita Mane",
+   "D": "BJP",
+   "E": "1156",
+   "F": "Rajsinh Shelke (BJP)",
+   "G": "Surekh Shah (INC)",
+   "H": "7"
+ },
+ {
+   "A": "96",
+   "B": "Dombivli West",
+   "C": "Surmanjiri Latkar",
+   "D": "NCP",
+   "E": "1089",
+   "F": "Kamlakar Bhopale (BJP)",
+   "G": "Shobha Kawale (INC)",
+   "H": "5"
+ },
+ {
+   "A": "97",
+   "B": "Dombivli East",
+   "C": "Nilesh Desai",
+   "D": "BJP",
+   "E": "1312",
+   "F": "Uma Ingale (BJP)",
+   "G": "Sanjay Mohite (INC)",
+   "H": "6"
+ },
+ {
+   "A": "98",
+   "B": "Dombivli East",
+   "C": "Arjun Mane",
+   "D": "INC",
+   "E": "1045",
+   "F": "Pooja Naiknavare (BJP)",
+   "G": "Nilofar Ajrekar (Ind.)",
+   "H": "7"
+ },
+ {
+   "A": "99",
+   "B": "Dombivli East",
+   "C": "Rajaram Gaikwad",
+   "D": "BJP",
+   "E": "1178",
+   "F": "Rajaram Gaikwad (BJP)",
+   "G": "Arjun Mane (INC)",
+   "H": "6"
+ },
+ {
+   "A": "100",
+   "B": "Dombivli East",
+   "C": "Rahul Chavan",
+   "D": "SS",
+   "E": "1201",
+   "F": "Dilip Powar (INC)",
+   "G": "Ashish Dhawale (BJP)",
+   "H": "5"
+ }
+]

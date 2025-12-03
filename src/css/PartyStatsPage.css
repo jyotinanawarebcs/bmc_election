@@ -1,0 +1,101 @@
+.seats-card {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.seats-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.party-stats-page {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+/* Header */
+.party-stats-page .party-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.party-stats-page .back-btn {
+  background: #0077b6;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Summary Cards */
+.party-stats-page .summary-section {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.party-stats-page .summary-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 180px;
+}
+
+/* Chart Section */
+.party-stats-page .chart-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.party-stats-page .chart-container {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 400px;
+  min-height: 350px;
+}
+
+/* Table Section */
+.party-stats-page .table-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.party-stats-page .party-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.party-stats-page .party-table th,
+.party-stats-page .party-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.party-stats-page .party-table th {
+  background-color: #0077b6;
+  color: white;
+}
+
+/* Specific to PartyStatsPage only */
+.party-stats-page .party-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
